@@ -1,63 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Connect PK - Countdown</title>
+    <title>CS Connect Pakistan🇵🇰 Hackathon 2025</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>CS Connect Pk Contest Countdown</h1>
-        <p>The contest ends in:</p>
-        <div id="countdown">7d 00:00:00</div>
+    <div class="noise-overlay"></div>
 
-         <!--add link for competition rules-->
-         <div class="rules">
+    <header class="hero">
+        <nav class="nav-container">
+            <div class="logo">CS Connect Pakistan</div>
+            <a href="#" class="nav-cta">Join Discord</a>
+        </nav>
+
+        <div class="hero-content">
+            <h1 class="glitch" data-text="CS Connect Pakistan🇵🇰 Hackathon 2025">CS Connect Pakistan🇵🇰 Hackathon 2025
+            </h1>
+            <p class="hero-subtitle">Test your skills and build the most beautiful and feature-rich yet static website
+                using AI-powered development!</p>
+
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span id="days">00</span>
+                    <span class="label">days</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours">00</span>
+                    <span class="label">hours</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes">00</span>
+                    <span class="label">minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds">00</span>
+                    <span class="label">seconds</span>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <a href="#" class="primary-cta">Join the Hackathon</a>
+                <a href="#rules" class="secondary-cta">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="rules" class="rules-section">
+            <h2>Competition Guidelines</h2>
+
+            <div class="rules-container">
+                <details>
+                    <summary>Eligibility & Requirements</summary>
+                    <div class="details-content">
+                        <ul>
+                            <li>Open to students of all skill levels</li>
+                            <li>Individual or team participation (max 3 members)</li>
+                            <li>Must use only static content (HTML, CSS, JavaScript)</li>
+                            <li>Must be deployable on GitHub Pages</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Judging Criteria</summary>
+                    <div class="details-content">
+                        <ul>
+                            <li><strong>Design & Aesthetics (40%)</strong>: UI/UX, visual appeal, animations</li>
+                            <li><strong>Responsiveness (30%)</strong>: Mobile-first approach, cross-device compatibility
+                            </li>
+                            <li><strong>AI Integration (20%)</strong>: Creative use of AI tools for development</li>
+                            <li><strong>Code Quality (10%)</strong>: Clean, maintainable, and well-documented code</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Technical Requirements</summary>
+                    <div class="details-content">
+                        <ul>
+                            <li>Pure HTML, CSS, and JavaScript only</li>
+                            <li>No backend dependencies or build steps</li>
+                            <li>All content must be static</li>
+                            <li>Must use responsive design (Flexbox/Grid)</li>
+                            <li>Performance optimized for fast loading</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="participate" class="participate-section">
             <h2>How to Participate</h2>
-            <p>1. Fork this <a href="https://github.com/csconnectpk/csconnect">repository</a> and submit your entry via a pull request.</p>
-            <p>2. Each participant is allowed to submit only one entry.</p>
-            <p>3. Your site must be fully functional and accessible through a GitHub Pages static website, like this one.</p>
-            <p>4. You may use existing open-source templates, provided their licenses are respected. Any entry that violates license terms will be disqualified.</p>
-            <p>5. You are permitted to use AI tools and submit code generated by language models.</p>
-            <p>6. The site must be responsive and work seamlessly on all devices.</p>
-            <p>7. The judges' decisions are final and binding.</p>
-            <p>8. If you need help or further clarification, feel free to ask us on <a href="https://discord.gg/wXd34sJQ8j" target="_blank">Discord</a>.</p>
-        </div>
-        
-        <div class="footer">
-            <p>&copy; 2025 CS Connect PK. All rights reserved.</p>
-            <!--<p>Follow us on <a href="https://www.facebook.com/CSConnectPK">Facebook</a> and <a href="https://twitter.com/CSConnectPK">Twitter</a>.</p>-->
-        </div>
-    </div>
-   
-    <script>
-        function startCountdown(durationInDays) {
-            let countdownElement = document.getElementById("countdown");
-            let targetDate = new Date().getTime() + durationInDays * 24 * 60 * 60 * 1000;
-            
-            function updateTimer() {
-                let now = new Date().getTime();
-                let timeLeft = targetDate - now;
-                
-                let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    countdownElement.innerHTML = "The contest has ended!";
-                }
-            }
-            
-            let timer = setInterval(updateTimer, 1000);
-            updateTimer();
-        }
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Step 1: Sign Up</h3>
+                    <p>Register for the hackathon through our official form to secure your spot.</p>
+                    <a href="https://forms.gle/your-form-link" class="step-link" target="_blank">Register Now</a>
+                </div>
 
-        startCountdown(7); 
-    </script>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Step 2: Fork Repository</h3>
+                    <p>Fork the official GitHub repository to start building your project.</p>
+                    <a href="https://github.com/csconnect/hackathon" class="step-link" target="_blank">Fork
+                        Repository</a>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Step 3: AI Brainstorming</h3>
+                    <p>Use AI tools like ChatGPT to brainstorm ideas and generate initial designs.</p>
+                    <a href="#tools" class="step-link">View AI Tools</a>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Step 4: Build & Enhance</h3>
+                    <p>Develop your project using AI-powered tools like GitHub Copilot.</p>
+                    <a href="#resources" class="step-link">View Resources</a>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Step 5: Submit</h3>
+                    <p>Create a Pull Request before the deadline to submit your entry.</p>
+                    <a href="https://github.com/csconnect/hackathon/pulls" class="step-link" target="_blank">Submit
+                        PR</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="tools-section">
+            <h2>AI Tools & Resources</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>ChatGPT</h3>
+                    <p>Generate code snippets, debug issues, and get programming guidance.</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>GitHub Copilot</h3>
+                    <p>AI-powered code completion and suggestions as you type.</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Midjourney</h3>
+                    <p>Generate unique graphics and visual assets for your site.</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Claude</h3>
+                    <p>Advanced AI assistant for complex programming tasks.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Connect with Us</h3>
+                <div class="social-links">
+                    <a href="https://discord.gg/csconnect" target="_blank" class="social-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="https://github.com/csconnect" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/csconnect" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/csconnect" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Have Questions?</h3>
+                <a href="https://github.com/csconnect/hackathon/issues/new" target="_blank" class="contact-link">
+                    Open GitHub Issue
+                </a>
+                <a href="https://forms.gle/contact-form" target="_blank" class="contact-link">
+                    Contact Form
+                </a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Share the Hackathon</h3>
+                <div class="share-buttons">
+                    <a href="https://twitter.com/intent/tweet?text=Join%20the%20CS%20Connect%20Hackathon!%20Build%20the%20future%20with%20AI-powered%20web%20development.%20%23CSConnect%20%23Hackathon"
+                        target="_blank" class="share-button twitter">
+                        <i class="fab fa-twitter"></i> Tweet
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://csconnect.github.io/hackathon"
+                        target="_blank" class="share-button linkedin">
+                        <i class="fab fa-linkedin"></i> Share
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 CS Connect Pakistan🇵🇰. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
