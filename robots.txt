@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://csconnect.pk/sitemap.xml
+
+# Block access to specific files
+Disallow: /README.md
+Disallow: /.git/ 

@@ -1,0 +1,21 @@
+{
+    "name": "CS Connect Hackathon",
+    "short_name": "CSConnect",
+    "description": "Join the CS Connect Hackathon to build the most beautiful and feature-rich website using AI-powered development",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0A0B1E",
+    "theme_color": "#6E44FF",
+    "icons": [
+        {
+            "src": "/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
