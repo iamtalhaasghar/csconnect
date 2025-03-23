@@ -470,6 +470,10 @@ footer {
     margin: 0 auto;
 }
 
+.footer-section {
+    text-align: center;
+}
+
 .footer-section h3 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.25rem;
@@ -480,6 +484,7 @@ footer {
 .social-links {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .social-link {
@@ -520,6 +525,7 @@ footer {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .share-button {
@@ -585,6 +591,6 @@ footer {
     }
 
     .share-buttons {
-        justify-content: center;
+        justify-content: center; 
     }
 }
