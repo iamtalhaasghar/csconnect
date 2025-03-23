@@ -1,0 +1,71 @@
+{
+  "name": "CS Connect Pakistan Hackathon",
+  "short_name": "CSConnect",
+  "description": "Join Pakistan's premier student-led hackathon to build innovative websites using AI",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/images/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#6E44FF",
+  "background_color": "#0A0B1E",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "education",
+    "technology",
+    "development"
+  ],
+  "screenshots": [
+    {
+      "src": "/images/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "CS Connect Hackathon Home"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Join Hackathon",
+      "url": "/#participate",
+      "icons": [
+        {
+          "src": "/images/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "View Rules",
+      "url": "/#rules",
+      "icons": [
+        {
+          "src": "/images/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
