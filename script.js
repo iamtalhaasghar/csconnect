@@ -1,6 +1,7 @@
-// Set the date we're counting down to (30 days from now)
+// Set the date we're counting down to (current date + fixed period)
+const countdownPeriod = 3; // Define the countdown period (in days)
 const countdownDate = new Date();
-countdownDate.setDate(countdownDate.getDate() + 30);
+countdownDate.setDate(countdownDate.getDate() + countdownPeriod); // Set the countdown date (30 days from now)
 
 // Update the countdown every second
 const timer = setInterval(function () {
@@ -10,7 +11,7 @@ const timer = setInterval(function () {
     // Find the distance between now and the countdown date
     const distance = countdownDate - now;
 
-    // Time calculations for days, hours, minutes and seconds
+    // Time calculations for days, hours, minutes, and seconds
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -67,4 +68,4 @@ document.querySelectorAll('section, details').forEach((el) => {
 // Add animation class to hero content after page load
 window.addEventListener('load', () => {
     document.querySelector('.hero-content').classList.add('loaded');
-}); 
+});
