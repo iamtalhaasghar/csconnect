@@ -1,32 +1,30 @@
-// Set the date we're counting down to (current date + fixed period)
-const countdownPeriod = 3; // Define the countdown period (in days)
-const countdownDate = new Date();
-countdownDate.setDate(countdownDate.getDate() + countdownPeriod); // Set the countdown date (30 days from now)
+// Set the date we're counting down to (the event start date)
+const countdownDate = new Date("2025-03-25T09:00").getTime(); // Event start date (march 25, 2025, 09:00)
 
 // Update the countdown every second
 const timer = setInterval(function () {
-    // Get current date and time
+    // Get the current date and time
     const now = new Date().getTime();
 
     // Find the distance between now and the countdown date
     const distance = countdownDate - now;
 
-    // Time calculations for days, hours, minutes, and seconds
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Display the results
-    document.getElementById("days").textContent = days.toString().padStart(2, '0');
-    document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-    document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-    document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
-
-    // If the countdown is finished, display expired message
+    // If the countdown is finished
     if (distance < 0) {
-        clearInterval(timer);
+        clearInterval(timer); // Stop the countdown
         document.querySelector('.countdown-container').innerHTML = "<h2>The hackathon has begun!</h2>";
+    } else {
+        // Time calculations for days, hours, minutes, and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the results
+        document.getElementById("days").textContent = days.toString().padStart(2, '0');
+        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
     }
 }, 1000);
 
